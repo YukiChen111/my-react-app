@@ -4,10 +4,6 @@ import './App.css';
 import Square from './Square';
 import {connect} from 'react-redux';
 import {changeColor,requestServer} from './actions/square-actions';
-import { directive } from '@babel/types';
-// import Axios from 'Axios';
-
-
 class App extends React.Component {
   constructor() {
     super();
@@ -39,7 +35,8 @@ class App extends React.Component {
     if (loading === "init") {
       return "hello";
     } else if (loading === "done") {
-      return "success";
+      // return "success";
+      return ret.data;
     } else if (loading === "failure") {
       return `failed message: ${msg}`;
     } else {

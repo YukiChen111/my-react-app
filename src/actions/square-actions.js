@@ -21,7 +21,7 @@ function action(type, payload) {
 }
 
 export function requestServer() {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(action(START_REQUEST));
 
     try {
@@ -30,7 +30,6 @@ export function requestServer() {
         dispatch(action(FAILURE_REQUEST, { msg: "Something wrong!" }));
         return;
       }
-
       dispatch(action(SUCCESS_REQUEST, { ret }));
     } catch (e) {
       dispatch(action(FAILURE_REQUEST, { msg: "Something wrong!" }));

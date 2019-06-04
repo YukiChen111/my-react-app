@@ -4,7 +4,7 @@ const initialState = {
       color: "green"
 };
 
-export default (state = initialState, action={})=>{
+export default function squareReducer(state = initialState, action={}){
   switch (action.type) {
     case CHANGE_COLOR: {
       return {
